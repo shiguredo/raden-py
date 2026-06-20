@@ -13,5 +13,5 @@ crate-type = ["cdylib"]
 name = "raden_py"
 
 [dependencies]
-pyo3 = { version = "0.24", features = ["abi3-py312", "extension-module"] }
+pyo3 = { version = "0.29", features = ["abi3-py312", "extension-module"] }
 raden = "2026.1.1"
