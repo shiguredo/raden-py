@@ -1,0 +1,23 @@
+# Rust
+/target/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+*.whl
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# サンプル出力
+*.bmp

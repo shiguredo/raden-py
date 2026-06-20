@@ -1,0 +1,17 @@
+[package]
+name = "raden_py"
+version = "2026.1.1"
+edition = "2024"
+rust-version = "1.91"
+description = "Python bindings for raden"
+readme = "README.md"
+license = "Apache-2.0"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+name = "raden_py"
+
+[dependencies]
+pyo3 = { version = "0.24", features = ["abi3-py312", "extension-module"] }
+raden = "2026.1.1"

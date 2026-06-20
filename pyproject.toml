@@ -1,0 +1,26 @@
+[project]
+name = "raden"
+version = "2026.1.1"
+description = "Python bindings for raden"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "maturin",
+  "pytest",
+  "numpy",
+  "raw-player",
+]
+
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[tool.maturin]
+module-name = "raden._raden"
+python-source = "python"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
