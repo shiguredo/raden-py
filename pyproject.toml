@@ -1,0 +1,54 @@
+[project]
+name = "raden"
+version = "2026.0.0"
+description = "Python bindings for raden"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Shiguredo Inc.", email = "contact+pypi@shiguredo.jp" }]
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: Free Threading :: 2 - Beta",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "maturin",
+  "pytest",
+  "numpy",
+  "raw-player",
+  "ruff",
+]
+
+[project.urls]
+Source = "https://github.com/shiguredo/raden-py"
+Discord = "https://discord.gg/shiguredo"
+
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[tool.maturin]
+module-name = "raden._raden"
+python-source = "python"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+# 自動生成された .pyi は formatter / linter / type checker の対象外にする。
+# __init__.pyi は pyo3-introspection 生成後に手直ししているが、再生成時に差分が出るのを避けるため除外する。
+[tool.ruff]
+exclude = ["python/raden/_raden.pyi", "python/raden/__init__.pyi"]
+
+[tool.ty]
+exclude = ["python/raden/_raden.pyi", "python/raden/__init__.pyi"]
